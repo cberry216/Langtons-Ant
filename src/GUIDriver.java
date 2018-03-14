@@ -43,7 +43,7 @@ public class GUIDriver extends JFrame {
         this.stop = new JButton("Stop");
         this.reset = new JButton("Restart");
         this.speedLabel = new JLabel("Speed", SwingConstants.CENTER);
-        this.speed = new JSlider(0, 50, 1);
+        this.speed = new JSlider(0, 50, 5);
         this.cellSizeLabel = new JLabel("Cell Size", SwingConstants.CENTER);
         SpinnerNumberModel snm = new SpinnerNumberModel(10, 2, 100, 1);
         this.cellSize = new JSpinner(snm);

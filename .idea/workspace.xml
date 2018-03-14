@@ -1,37 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="LangtonsAnt" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cc855b76-a5d1-4178-b374-f12b9cad347c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/LangtonsAnt.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/Ant.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/Cell.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/CellSizeChangeListener.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/Direction.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/GUIDriver.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/GameDriver.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/LangtonsAnt.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/Map.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/MapButtonListener.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/MapCanvas.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/MapMouseListener.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/MenuButtonListener.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/LangtonsAnt/SpeedChangeListener.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ant.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Cell.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/CellSizeChangeListener.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Direction.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GUIDriver.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GameDriver.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/LangtonsAnt.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Map.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/MapButtonListener.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/MapCanvas.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/MapMouseListener.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/MenuButtonListener.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/SpeedChangeListener.java" />
+      <change beforePath="$PROJECT_DIR$/src/GUIDriver.java" afterPath="$PROJECT_DIR$/src/GUIDriver.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapCanvas.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MapCanvas.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MapCanvas.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -120,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIDriver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUIDriver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUIDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+            <state relative-caret-position="318">
+              <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6600#6601#0" expanded="true" />
@@ -240,8 +216,8 @@
         <option value="$PROJECT_DIR$/src/GameDriver.java" />
         <option value="$PROJECT_DIR$/src/CellSizeChangeListener.java" />
         <option value="$PROJECT_DIR$/src/MenuButtonListener.java" />
-        <option value="$PROJECT_DIR$/src/GUIDriver.java" />
         <option value="$PROJECT_DIR$/src/MapCanvas.java" />
+        <option value="$PROJECT_DIR$/src/GUIDriver.java" />
       </list>
     </option>
   </component>
@@ -287,6 +263,11 @@
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -439,6 +420,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -632,10 +614,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MapCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#3843#3844#0" expanded="true" />
+            <element signature="e#3887#3888#0" expanded="true" />
+            <element signature="e#3938#3939#0" expanded="true" />
+            <element signature="e#3997#3998#0" expanded="true" />
+            <element signature="e#4031#4032#0" expanded="true" />
+            <element signature="e#4091#4092#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUIDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        <state relative-caret-position="318">
+          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6600#6601#0" expanded="true" />
@@ -658,23 +658,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MapCanvas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1439#1440#0" expanded="true" />
-            <element signature="e#1531#1532#0" expanded="true" />
-            <element signature="e#3843#3844#0" expanded="true" />
-            <element signature="e#3887#3888#0" expanded="true" />
-            <element signature="e#3938#3939#0" expanded="true" />
-            <element signature="e#3997#3998#0" expanded="true" />
-            <element signature="e#4031#4032#0" expanded="true" />
-            <element signature="e#4091#4092#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>LangtonsAnt</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>LangtonsAnt</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
