@@ -61,9 +61,6 @@ public class MapCanvas extends JPanel {
     @Override
     public void paint(Graphics g) {
         try {
-            this.numCols = 0;
-            this.numRows = 0;
-
             g.setColor(Color.WHITE);
             g.fillRect(0, 0, this.width, this.height);
             g.setColor(Color.BLACK);
@@ -72,7 +69,6 @@ public class MapCanvas extends JPanel {
             int currentDrawWidth = 0;
             while (currentDrawWidth < this.width) {
                 g.drawLine(currentDrawWidth, 0, currentDrawWidth, this.height);
-                this.numCols++;
                 currentDrawWidth += this.cellLength;
             }
 
@@ -80,7 +76,6 @@ public class MapCanvas extends JPanel {
             int currentDrawHeight = 0;
             while (currentDrawHeight < this.height) {
                 g.drawLine(0, currentDrawHeight, this.width, currentDrawHeight);
-                this.numRows++;
                 currentDrawHeight += this.cellLength;
             }
 
