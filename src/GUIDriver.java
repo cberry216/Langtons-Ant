@@ -1,11 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
 
+/**
+ * This class acts as the actual display that is seen when the program is
+ * run. This class controls the listeners that listen to the user's mouse
+ * clicks. It also controls the game loop when the game is played.
+ */
 public class GUIDriver extends JFrame {
 
-    Dimension screenSize;
+    private Dimension screenSize;
 
     private MapCanvas mapCanvas;
     private JButton start;
@@ -27,6 +31,9 @@ public class GUIDriver extends JFrame {
     private boolean play;
     private boolean started;
 
+    /**
+     * Constructor for the {@link GUIDriver} object.
+     */
     GUIDriver(){
         this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setPreferredSize(this.screenSize);
@@ -64,6 +71,9 @@ public class GUIDriver extends JFrame {
         this.initJFrame();
     }
 
+    /**
+     * Adds the listeners to the corresponding GUI object.
+     */
     private void addListeners() {
         this.start.addActionListener(new MapButtonListener(this, (byte)0));
         this.stop.addActionListener(new MapButtonListener(this, (byte)1));
@@ -77,6 +87,9 @@ public class GUIDriver extends JFrame {
         this.randomGame.addActionListener(new MenuButtonListener(this, (byte)1));
     }
 
+    /**
+     * Adds all the elements to the GUI and sets the size of everything.
+     */
     private void initJFrame() {
         setLayout(new GridBagLayout());
         setPreferredSize(this.screenSize);
@@ -174,15 +187,20 @@ public class GUIDriver extends JFrame {
         add(this.mapCanvas, gbc);
     }
 
+    /**
+     * Take a single step through the simulation.
+     */
     private void stepSimulation() {
         this.gameDriver.step();
         ArrayList<Cell> stepBlackCells = this.gameDriver.getGameMap().getBlackCells();
         this.mapCanvas.blackCells.clear();
+        // Convert all cells in the gameDriver to cells in the mapCanvas
         for(Cell blackCell : stepBlackCells) {
             this.mapCanvas.blackCells.add(new Point(blackCell.xPos * this.mapCanvas.cellLength, blackCell.yPos * this.mapCanvas.cellLength));
         }
         this.mapCanvas.repaint();
         try {
+            // Wait for a period of time depending on the playSpeed
             Thread.sleep(500 / this.playSpeed);
         }
         catch (InterruptedException e) {
@@ -190,6 +208,9 @@ public class GUIDriver extends JFrame {
         }
     }
 
+    /**
+     * Resets the map and continually steps through the simulation.
+     */
     public void startSimulation() {
         this.mapCanvas.setupMap();
         this.play = true;
@@ -199,12 +220,19 @@ public class GUIDriver extends JFrame {
         }
     }
 
+    /**
+     * If the simulation was already started, this just continues the
+     * simulation without resetting the map.
+     */
     public void continueSimulation() {
         while(this.play) {
             stepSimulation();
         }
     }
 
+    /**
+     * Resets the {@link GUIDriver} and the {@link MapCanvas}.
+     */
     public void resetGUI() {
         this.gameDriver = new GameDriver();
         this.mapCanvas.resetMapCanvas();
@@ -214,39 +242,77 @@ public class GUIDriver extends JFrame {
     }
 
     // Getters
+
+    /**
+     * Returns the {@link GameDriver} object.
+     * @return  the {@link GameDriver}
+     */
     public GameDriver getGameDriver() {
         return this.gameDriver;
     }
 
+    /**
+     * Returns whether the game is currently running.
+     * @return  the play boolean.
+     */
     public boolean getPlay() {
         return this.play;
     }
 
+    /**
+     * Returns whether the game has already been started.
+     * @return  the started member.
+     */
     public boolean getStarted() {
         return this.started;
     }
 
+    /**
+     * Returns the {@link MapCanvas} object.
+     * @return  the {@link MapCanvas}
+     */
     public MapCanvas getMapCanvas() {
         return this.mapCanvas;
     }
 
+    /**
+     * Returns the current value of the speed {@link JSlider}
+     * @return  the value of the speed slider.
+     */
     public int getSpeed() {
         return this.speed.getValue();
     }
 
+    /**
+     * Returns the current value of the cell size {@link JSpinner}
+     * @return  the value of the cell size spinner.
+     */
     public int getCellLength() {
         return (int)this.cellSize.getValue();
     }
 
     // Setters
+
+    /**
+     * Sets the {@link GameDriver} to another {@link GameDriver}.
+     * @param gameDriver  the {@link GameDriver} to set gameDriver to.
+     */
     public void setGameDriver(GameDriver gameDriver) {
         this.gameDriver = gameDriver;
     }
 
+    /**
+     * Change the value of play.
+     * @param play  The value of play; true or false.
+     */
     public void setPlay(boolean play) {
         this.play = play;
     }
 
+    /**
+     * Set the speed of the game. If speed equals 0, stop the game.
+     * @param speed  the speed to set the game to.
+     */
     public void setSpeed(int speed) {
         if(speed == 0) {
             this.play = false;

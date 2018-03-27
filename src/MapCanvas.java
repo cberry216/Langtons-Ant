@@ -3,13 +3,25 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 
+/**
+ * This class acts as a canvas to draw the grid, black {@link Cell}s, white
+ * {@link Cell}s, and the {@link Ant}. Controls map setup, map reset,
+ * centering the {@link Ant}, and generating a random {@link Map}.
+ */
 public class MapCanvas extends JPanel {
 
     private int width, height, numCols, numRows;
     int cellLength;
     ArrayList<Point> blackCells;
-    GUIDriver guiDriver;
+    private GUIDriver guiDriver;
 
+    /**
+     * Constructor of the {@link MapCanvas} object.
+     * @param width      width of the canvas
+     * @param height     height of the canvas
+     * @param cellLength the length in pixels of each cell
+     * @param guiDriver  the {@link GUIDriver} that the {@link MapCanvas} is in
+     */
     MapCanvas(int width, int height, int cellLength, GUIDriver guiDriver) {
         this.width = width;
         this.height = height;
@@ -25,21 +37,31 @@ public class MapCanvas extends JPanel {
         addMouseListener(new MapMouseListener(this));
     }
 
+    /**
+     * Sets the {@link Ant}'s position and adds all of the custom added black
+     * {@link Cell}s to the {@link Map}.
+     */
     public void setupMap() {
         this.guiDriver.setGameDriver(new GameDriver());
         if(!this.guiDriver.getStarted())
             this.guiDriver.getGameDriver().setAntPos(this.numCols / 2, this.numRows / 2);
+        // For each black cell in the MapCanvas, add them to the GameDriver and Map
         for(Point blackCell : this.blackCells) {
             this.guiDriver.getGameDriver().addBlackCell((blackCell.x / this.cellLength), (blackCell.y / this.cellLength));
-            this.guiDriver.getGameDriver().getGameMap().addCell((blackCell.x / this.cellLength), (blackCell.y / this.cellLength));
         }
     }
 
+    /**
+     * Clears the canvas and centers the {@link Ant}.
+     */
     public void resetMapCanvas() {
         this.blackCells.clear();
         centerAnt();
     }
 
+    /**
+     * Centers the {@link Ant} in the {@link MapCanvas}.
+     */
     public void centerAnt() {
         this.guiDriver.getGameDriver().setAntPos(this.numCols / 2, this.numRows / 2);
     }
@@ -58,6 +80,11 @@ public class MapCanvas extends JPanel {
         this.repaint();
     }
 
+    /**
+     * Paints the white background, the grid, black {@link Cell}s, and the
+     * {@link Ant}.
+     * @param g  Not used explicitly.
+     */
     @Override
     public void paint(Graphics g) {
         try {
@@ -100,15 +127,27 @@ public class MapCanvas extends JPanel {
     }
 
     // Setters
+
+    /**
+     * Sets the {@link MapCanvas}'s cell length to the given length.
+     * @param cellLength  width to set the cell length to.
+     */
     public void setCellLength(int cellLength) {
         this.cellLength = cellLength;
     }
 
     // Resetters
+
+    /**
+     * Reset the number of columns in case the width and/or height change.
+     */
     public void resetNumCols() {
         this.numCols = this.width / this.cellLength;
     }
 
+    /**
+     * Reset the number of rows in case the width and/or height change.
+     */
     public void resetNumRows() {
         this.numRows = this.height / this.cellLength;
     }

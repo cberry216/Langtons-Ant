@@ -1,3 +1,6 @@
+/**
+ * This class is the main class that runs the whole game.
+ */
 public class LangtonsAnt {
 
     public static void main(String[] args) {
