@@ -19,6 +19,7 @@ public class GUIDriver extends JFrame {
     private JSlider speed;
     private JLabel cellSizeLabel;
     private JSpinner cellSize;
+    private JLabel stepCounter;
 
     private JMenuBar menuBar;
     private JMenu fileMenu;
@@ -30,6 +31,8 @@ public class GUIDriver extends JFrame {
     private int playSpeed;
     private boolean play;
     private boolean started;
+
+    private int stepNumber;
 
     /**
      * Constructor for the {@link GUIDriver} object.
@@ -54,12 +57,15 @@ public class GUIDriver extends JFrame {
         this.cellSizeLabel = new JLabel("Cell Size", SwingConstants.CENTER);
         SpinnerNumberModel snm = new SpinnerNumberModel(10, 2, 100, 1);
         this.cellSize = new JSpinner(snm);
+        this.stepCounter = new JLabel("Step: 0");
 
         this.menuBar = new JMenuBar();
         this.fileMenu = new JMenu("File");
         this.gameMenu = new JMenu("Game");
         this.exitGame = new JMenuItem("Exit");
         this.randomGame = new JMenuItem("Random Game");
+
+        this.stepNumber = 0;
 
         this.play = false;
         this.playSpeed = 1;
@@ -94,7 +100,7 @@ public class GUIDriver extends JFrame {
         setLayout(new GridBagLayout());
         setPreferredSize(this.screenSize);
 
-        Dimension buttonSize = new Dimension(200, 130);
+        Dimension buttonSize = new Dimension(200, 125);
 
         this.fileMenu.add(this.exitGame);
 
@@ -120,6 +126,8 @@ public class GUIDriver extends JFrame {
 
         this.cellSizeLabel.setPreferredSize(new Dimension(200, 20));
         this.cellSize.setPreferredSize(new Dimension(200, 20));
+
+        this.stepCounter.setPreferredSize(new Dimension(200, 15));
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -180,10 +188,18 @@ public class GUIDriver extends JFrame {
         add(this.cellSize, gbc);
 
         gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 7;
+        gbc.gridheight = 1;
+        gbc.gridwidth = 1;
+        gbc.insets = new Insets(0,15,0,0);
+        add(this.stepCounter, gbc);
+
+        gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.gridwidth = 6;
-        gbc.gridheight = 7;
+        gbc.gridheight = 8;
         add(this.mapCanvas, gbc);
     }
 
@@ -192,11 +208,13 @@ public class GUIDriver extends JFrame {
      */
     private void stepSimulation() {
         this.gameDriver.step();
-        ArrayList<Cell> stepBlackCells = this.gameDriver.getGameMap().getBlackCells();
+        this.stepNumber++;
+        this.stepCounter.setText("Step: " + this.stepNumber);
+        ArrayList<Point> stepBlackCells = this.gameDriver.getGameMap().blackCells;
         this.mapCanvas.blackCells.clear();
         // Convert all cells in the gameDriver to cells in the mapCanvas
-        for(Cell blackCell : stepBlackCells) {
-            this.mapCanvas.blackCells.add(new Point(blackCell.xPos * this.mapCanvas.cellLength, blackCell.yPos * this.mapCanvas.cellLength));
+        for(Point blackCell : stepBlackCells) {
+            this.mapCanvas.blackCells.add(new Point((int)blackCell.getX() * this.mapCanvas.cellLength, (int)blackCell.getY() * this.mapCanvas.cellLength));
         }
         this.mapCanvas.repaint();
         try {
@@ -239,6 +257,8 @@ public class GUIDriver extends JFrame {
         this.started = false;
         this.mapCanvas.repaint();
         this.play = false;
+        this.stepNumber = 0;
+        this.stepCounter.setText("Step: 0");
     }
 
     // Getters
